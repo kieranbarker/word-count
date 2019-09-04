@@ -1,3 +1,3 @@
-(function(w, d, u) {
-  //
-})(window, document);
+(function(d, u) {
+
+})(document);

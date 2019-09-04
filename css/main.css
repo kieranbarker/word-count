@@ -1,0 +1,10 @@
+body {
+  width: 88%;
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+textarea {
+  width: 100%;
+  min-height: 24em;
+}

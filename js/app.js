@@ -13,7 +13,7 @@
   // Functions
   //
 
-  var countWords = function(element) {
+  function countWords(element) {
     if (element.nodeName.toLowerCase() !== "textarea" && element.nodeName.toLowerCase() !== "input" && element.type.toLowerCase() !== "text") return;
 
     var wordCount = element.value.trim();
@@ -21,12 +21,12 @@
 
     wordCount = wordCount.split(/\s+/).length;
     return wordCount;
-  };
+  }
 
-  var updateWordCount = function(content, wordCount) {
+  function updateWordCount(content, wordCount) {
     if (!content || !wordCount) return;
     wordCount.textContent = countWords(content);
-  };
+  }
 
   //
   // Init

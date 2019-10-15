@@ -32,6 +32,8 @@
   // Init
   //
 
+  if (countWords(content)) updateWordCount(content, wordCount);
+
   content.addEventListener("input", function() {
     updateWordCount(this, wordCount);
   }, false);

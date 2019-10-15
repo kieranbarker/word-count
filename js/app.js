@@ -1,4 +1,6 @@
-(function(d, u) {
+(function(d) {
+  
+  "use strict";
 
   //
   // Variables

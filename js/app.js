@@ -29,7 +29,7 @@
 
   function updateCount(content, count, chars) {
     if (!content || !count) return;
-    count.textContent = countWordsOrChars(content, (chars) ? true : false);
+    count.textContent = countWordsOrChars(content, chars);
   }
 
   /**

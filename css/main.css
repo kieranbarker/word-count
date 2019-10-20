@@ -6,7 +6,7 @@ html {
   font: 16px "Source Serif Pro", sans-serif;
 }
 
-body, .wrapper {
+body {
   margin: 0 auto;
 }
 
@@ -21,9 +21,4 @@ textarea {
   min-height: 18em;
   padding: 20px;
   border: 1px solid #999;
-}
-
-.wrapper {
-  max-width: 1064px;
-  padding: 0 20px;
 }

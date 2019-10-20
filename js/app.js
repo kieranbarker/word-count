@@ -36,7 +36,7 @@
    * Init
    */
 
-  // Update both counts when page loads because Firefox caches textarea's value
+  // Update both counts when the page loads because Firefox caches the textarea's value
   if (countWordsOrChars(content)) {
     updateCount(content, wordCount);
     updateCount(content, characterCount, true);

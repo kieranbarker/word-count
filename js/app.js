@@ -2,16 +2,16 @@
   
   "use strict";
 
-  //
-  // Variables
-  //
+  /**
+   * Variables
+   */
 
   var content = d.getElementById("content");
   var wordCount = d.getElementById("word-count");
 
-  //
-  // Functions
-  //
+  /**
+   * Functions
+   */
 
   function countWords(element) {
     if (!element) return;
@@ -28,9 +28,9 @@
     wordCount.textContent = countWords(content);
   }
 
-  //
-  // Init
-  //
+  /**
+   * Init
+   */
 
   if (countWords(content)) updateWordCount(content, wordCount);
 

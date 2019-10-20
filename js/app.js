@@ -6,36 +6,45 @@
    * Variables
    */
 
-  var content = d.getElementById("content");
-  var wordCount = d.getElementById("word-count");
+  var content        = d.getElementById("content"),
+      wordCount      = d.getElementById("word-count"),
+      characterCount = d.getElementById("character-count");
 
   /**
    * Functions
    */
 
-  function countWords(element) {
+  function countWordsOrChars(element, countChars) {
     if (!element) return;
 
-    var wordCount = element.value.trim();
-    if (!wordCount) return 0;
+    var count = (countChars) ? element.value.length : element.value.trim();
+    if (!count) return 0;
 
-    wordCount = wordCount.split(/\s+/).length;
-    return wordCount;
+    if (!countChars) {
+      count = count.split(/\s+/).length;
+    }
+
+    return count;
   }
 
-  function updateWordCount(content, wordCount) {
-    if (!content || !wordCount) return;
-    wordCount.textContent = countWords(content);
+  function updateCount(content, count, chars) {
+    if (!content || !count) return;
+    count.textContent = countWordsOrChars(content, (chars) ? true : false);
   }
 
   /**
    * Init
    */
 
-  if (countWords(content)) updateWordCount(content, wordCount);
+  // Update both counts when page loads because Firefox caches textarea's value
+  if (countWordsOrChars(content)) {
+    updateCount(content, wordCount);
+    updateCount(content, characterCount, true);
+  }
 
   content.addEventListener("input", function() {
-    updateWordCount(this, wordCount);
+    updateCount(this, wordCount);
+    updateCount(this, characterCount, true);
   }, false);
 
 })(document);

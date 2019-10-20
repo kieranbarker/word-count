@@ -7,13 +7,10 @@ html {
 }
 
 body {
-  margin: 0 auto;
-}
-
-body {
   width: 88%;
   max-width: 40em;
   padding-bottom: 20px;
+  margin: 0 auto;
 }
 
 textarea {

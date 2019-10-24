@@ -6,9 +6,8 @@
    * Variables
    */
 
-  var content        = d.getElementById("content"),
-      wordCount      = d.getElementById("word-count"),
-      characterCount = d.getElementById("character-count");
+  var content = d.getElementById("content"),
+      count   = d.getElementById("count");
 
   /**
    * Functions
@@ -27,24 +26,21 @@
     return count;
   }
 
-  function updateCount(content, count, chars) {
+  function updateCount(content, count) {
     if (!content || !count) return;
-    count.textContent = countWordsOrChars(content, chars);
+    count.textContent = "You've written " + countWordsOrChars(content) + " words ";
+    count.textContent += "and " + countWordsOrChars(content, true) + " characters."
   }
 
   /**
    * Init
    */
 
-  // Update both counts when the page loads because Firefox caches the textarea's value
-  if (countWordsOrChars(content)) {
-    updateCount(content, wordCount);
-    updateCount(content, characterCount, true);
-  }
+  // Reset the text area when the page loads because Firefox caches its value
+  content.value = "";
 
   content.addEventListener("input", function() {
-    updateCount(this, wordCount);
-    updateCount(this, characterCount, true);
+    updateCount(this, count);
   }, false);
 
 })(document);

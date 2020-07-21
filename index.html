@@ -3,22 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Displays the number of words and characters in a block of text in real time as the user types.">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
     <title>Word Count</title>
+    <link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="favicon-32x32.png" rel="icon" type="image/png" sizes="32x32">
+    <link href="favicon-16x16.png" rel="icon" type="image/png" sizes="16x16">
+    <link href="main.css" rel="stylesheet">
   </head>
   <body>
-    <h1>Word Count</h1>
-    <p>Type some text into the box below, or paste it from somewhere else, and the counter will show how many words and characters there are.</p>
-    <p>
-      <a href="https://github.com/kieranbarker/word-count">View the repository on GitHub</a>
-    </p>
-    <textarea id="content"></textarea>
-    <p id="count" aria-live="polite">You've written 0 words and 0 characters.</p>
-    <script src="js/app.js"></script>
+    <header>
+      <h1>Word Count</h1>
+    </header>
+    <main>
+      <label for="text">Enter your text below.</label>
+      <textarea id="text"></textarea>
+      <p id="count" aria-live="polite">You've written 0 words and 0 characters.</p>
+    </main>
+    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

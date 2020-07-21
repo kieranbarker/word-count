@@ -1,46 +1,68 @@
-;(function(d) {
-  
+;(function () {
+
+  // Opt into ES5 strict mode
   "use strict";
 
+  //
+  // Variables
+  //
+
+  // Get the #text element
+  var text = document.querySelector("#text");
+
+  // Get the #count element
+  var count = document.querySelector("#count");
+
+
+  //
+  // Functions
+  //
+
   /**
-   * Variables
+   * Get the number of words in a text area
+   * @param   {Object} textArea The text area
+   * @returns {Number}          The word count
    */
+  function getWordCount (textArea) {
 
-  var content = d.getElementById("content"),
-      count   = d.getElementById("count");
+    // Trim whitespace from the value
+    var value = textArea.value.trim();
+    
+    // If it's an empty string, return zero
+    if (!value) return 0;
 
-  /**
-   * Functions
-   */
+    // Otherwise, return the word count
+    return value.split(/\s+/).length;
 
-  function countWordsOrChars(element, countChars) {
-    if (!element) return;
-
-    var count = (countChars) ? element.value.length : element.value.trim();
-    if (!count) return 0;
-
-    if (!countChars) {
-      count = count.split(/\s+/).length;
-    }
-
-    return count;
   }
 
-  function updateCount(content, count) {
-    if (!content || !count) return;
-    count.textContent = "You've written " + countWordsOrChars(content) + " words ";
-    count.textContent += "and " + countWordsOrChars(content, true) + " characters."
+  /**
+   * Get the number of characters in a text area
+   * @param   {Object} textArea The text area
+   * @returns {Number}          The character count
+   */
+  function getCharacterCount (textArea) {
+    return textArea.value.length;
   }
 
   /**
-   * Init
+   * Update the word and character counts
    */
+  function updateCounts () {
 
-  // Reset the text area when the page loads because Firefox caches its value
-  content.value = "";
+    count.textContent = (
+      "You've written " + getWordCount(this) + " words " +
+      "and " + getCharacterCount(this) + " characters."
+    );
 
-  content.addEventListener("input", function() {
-    updateCount(this, count);
-  }, false);
+  }
 
-})(document);
+
+  //
+  // Inits & Event Listeners
+  //
+
+  // Update both counts when the value of #text changes
+  text.addEventListener("input", updateCounts);
+
+})();

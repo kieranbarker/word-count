@@ -1,9 +1,7 @@
 # Word Count
 
-This is the second major project for [The Vanilla JS Academy](https://vanillajsacademy.com/).
+This is the second project from the [Vanilla JS Academy](https://vanillajsacademy.com).
 
-It's a script counts the number of words and characters inside a `textarea` in real time.
-
-The changes are announced to screen readers thanks to the `aria-live` attribute.
-
-[View Demo](https://kieranbarker.github.io/word-count/)
+1. [Character count](https://kieranbarker.github.io/word-count/character-count/)
+2. [Character and word count](https://kieranbarker.github.io/word-count/character-and-word-count/)
+3. [Announcing the count](https://kieranbarker.github.io/word-count/announcing-the-count/)

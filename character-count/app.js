@@ -8,7 +8,6 @@
   // Variables
   //
 
-
   /** @type {HTMLTextAreaElement} */
   const textArea = document.querySelector('#text');
 

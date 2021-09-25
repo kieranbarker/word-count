@@ -1,3 +1,5 @@
+// @ts-check
+
 ;(function() {
 
   'use strict';
@@ -6,8 +8,10 @@
   // Variables
   //
 
-  // Get the text area and count
+  /** @type {HTMLTextAreaElement} */
   const textArea = document.querySelector('#text');
+
+  /** @type {HTMLParagraphElement} */
   const count = document.querySelector('#count');
 
 

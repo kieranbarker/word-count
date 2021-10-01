@@ -9,13 +9,13 @@ function countWords() {
   return value.split(/\s+/).length;
 }
 
-function countCharacters() {
+function countChars() {
   return textArea.value.length;
 }
 
 function updateCount() {
   const numWords = countWords();
-  const numChars = countCharacters();
+  const numChars = countChars();
 
   count.textContent = `
     You've written ${numWords.toString(10)} words

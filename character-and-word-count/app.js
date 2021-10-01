@@ -3,7 +3,7 @@
 const textArea = document.querySelector('#text');
 
 const wordCount = document.querySelector('#word-count');
-const characterCount = document.querySelector('#character-count');
+const charCount = document.querySelector('#character-count');
 
 function countWords() {
   const value = textArea.value.trim();
@@ -11,16 +11,16 @@ function countWords() {
   return value.split(/\s+/).length;
 }
 
-function countCharacters() {
+function countChars() {
   return textArea.value.length;
 }
 
 function updateCount() {
   const numWords = countWords();
-  const numChars = countCharacters();
+  const numChars = countChars();
 
   wordCount.textContent = numWords.toString(10);
-  characterCount.textContent = numChars.toString(10);
+  charCount.textContent = numChars.toString(10);
 }
 
 updateCount();

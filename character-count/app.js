@@ -1,52 +1,17 @@
-// @ts-check
+'use strict';
 
-;(function() {
+const textArea = document.querySelector('#text');
+const charCount = document.querySelector('#character-count');
 
-  'use strict';
+function countChars() {
+  return textArea.value.length;
+}
 
-  //
-  // Variables
-  //
+function updateCount() {
+  const numChars = countChars();
+  charCount.textContent = numChars.toString(10);
+}
 
-  /** @type {HTMLTextAreaElement} */
-  const textArea = document.querySelector('#text');
+updateCount();
 
-  /** @type {HTMLSpanElement} */
-  const characterCount = document.querySelector('#character-count');
-
-
-  //
-  // Functions
-  //
-
-  /**
-   * Count the number of characters
-   * @returns {number} The number of characters
-   */
-  function countCharacters() {
-    return textArea.value.length;
-  }
-
-  /**
-   * Update the character count
-   */
-  function updateCount() {
-    // Get the count
-    const numChars = countCharacters();
-
-    // Update the count
-    characterCount.textContent = numChars.toString(10);
-  }
-
-
-  //
-  // Inits & Event Listeners
-  //
-
-  // Set the initial count
-  updateCount();
-
-  // Handle input events
-  textArea.addEventListener('input', updateCount);
-
-})();
+textArea.addEventListener('input', updateCount);

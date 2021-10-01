@@ -1,5 +1,3 @@
-// @ts-check
-
 ;(function() {
 
   'use strict';
@@ -8,13 +6,8 @@
   // Variables
   //
 
-  /** @type {HTMLTextAreaElement} */
   const textArea = document.querySelector('#text');
-
-  /** @type {HTMLSpanElement} */
   const wordCount = document.querySelector('#word-count');
-
-  /** @type {HTMLSpanElement} */
   const characterCount = document.querySelector('#character-count');
 
 
